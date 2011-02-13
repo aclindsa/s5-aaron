@@ -1,106 +1,318 @@
 /* Following are the presentation styles -- edit away! */
 
-body {background: transparent; color: #000; font-size: 2em;}
-:link, :visited {text-decoration: none; color: #00C;}
-#controls :active {color: #88A !important;}
-#controls :focus {outline: 1px dotted #227;}
-h1, h2, h3, h4 {font-size: 100%; margin: 0; padding: 0; font-weight: inherit;}
-ul, pre {margin: 0; line-height: 1em;}
-html, body {margin: 0; padding: 0;}
+body {
+	background:transparent;
+	color:#000;
+	font-size:2em;
+}
 
-blockquote, q {font-style: italic;}
-blockquote {padding: 0 2em 0.5em; margin: 0 1.5em 0.5em; text-align: center; font-size: 1em;}
-blockquote p {margin: 0;}
-blockquote i {font-style: normal;}
-blockquote b {display: block; margin-top: 0.5em; font-weight: normal; font-size: smaller; font-style: normal;}
-blockquote b i {font-style: italic;}
+	:link,:visited {
+	text-decoration:none;
+	color:#00C;
+}
 
-kbd {font-weight: bold; font-size: 1em;}
-sup {font-size: smaller; line-height: 1px;}
+#controls :active {
+	color:#88A!important;
+}
 
-.slide code {padding: 2px 0.25em; font-weight: bold; color: #533;}
-.slide code.bad, code del {color: red;}
-.slide code.old {color: silver;}
-.slide pre {padding: 0; margin: 0.25em 0 0.5em 0.5em; color: #533; font-size: 90%;}
-.slide pre code {display: block;}
-.slide ul {margin-left: 5%; margin-right: 7%; list-style: disc;}
-.slide li {margin-top: 0.75em; margin-right: 0;}
-.slide ul ul {line-height: 1;}
-.slide ul ul li {margin: .2em; font-size: 85%; list-style: square;}
-.slide img.leader {display: block; margin: 0 auto;}
+#controls :focus {
+	outline:1px dotted #227;
+}
 
-div#header, div#footer {background: #005;
-  font-family: Verdana, Helvetica, sans-serif;}
+h1,h2,h3,h4 {
+	font-size:100%;
+	font-weight:inherit;
+	margin:0;
+	padding:0;
+}
+
+ul,pre {
+	line-height:1em;
+	margin:0;
+}
+
+html,body {
+	margin:0;
+	padding:0;
+}
+
+blockquote {
+	text-align:center;
+	font-size:1em;
+	margin:0 1.5em .5em;
+	padding:0 2em .5em;
+}
+
+blockquote p {
+	margin:0;
+}
+
+blockquote i {
+	font-style:normal;
+}
+
+blockquote b {
+	display:block;
+	margin-top:.5em;
+	font-weight:400;
+	font-size:smaller;
+	font-style:normal;
+}
+
+kbd {
+	font-weight:700;
+	font-size:1em;
+}
+
+sup {
+	font-size:smaller;
+	line-height:1px;
+}
+
+.slide code {
+	font-weight:700;
+	color:#533;
+	padding:2px .25em;
+}
+
+.slide code.bad,code del {
+	color:red;
+}
+
+.slide code.old {
+	color:silver;
+}
+
+.slide pre {
+	color:#533;
+	font-size:90%;
+	margin:.25em 0 .5em .5em;
+	padding:0;
+}
+
+.slide pre code {
+	display:block;
+}
+
+.slide ul {
+	margin-left:5%;
+	margin-right:7%;
+	list-style:disc;
+}
+
+.slide li {
+	margin-top:.75em;
+	margin-right:0;
+}
+
+.slide ul ul {
+	line-height:1;
+}
+
+.slide ul ul li {
+	font-size:85%;
+	list-style:square;
+	margin:.2em;
+}
+
+.slide img.leader {
+	display:block;
+	margin:0 auto;
+}
+
+div#header,div#footer {
+	background:#005;
+	font-family:Verdana, Helvetica, sans-serif;
+}
+
 div#header {
-	color: #660000;
-	height: 3.5em;
-	line-height: 1px;
-	background: url("bg_header.jpg") repeat-x transparent top center;
+	color:#600;
+	height:3.5em;
+	line-height:1px;
+	background:url(bg_header.jpg) repeat-x transparent top center;
 }
+
 div#footer {
-	color: #AFC7D5;
-	font-size: 0.5em;
-	font-weight: bold;
-	padding: 1em 0;
-	background: url("bg_footer.jpg") repeat-x #3B5A6E;
+	color:#AFC7D5;
+	font-size:.5em;
+	font-weight:700;
+	background: #13262D; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #BAB79E 13%, #13262D 14%, #13262D 24%, #263d4b 95%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(13%,#BAB79E), color-stop(14%,#13262D), color-stop(24%,#13262D), color-stop(95%,#263d4b)); /* webkit */
+	padding:1em 0;
 }
-#footer h1, #footer h2 {display: block; padding: 0 1em;}
-#footer h2 {font-style: italic;}
 
-div.long {font-size: 0.75em;}
-.slide h1 {position: absolute; top: 0.6em; left: 87px; z-index: 1;
-  margin: 0; padding: 0.3em 0 0 50px; white-space: nowrap;
-  font: bold 150%/1em Helvetica, sans-serif; text-transform: capitalize;
-  color: #550000;
-  text-shadow: 3px 3px 3px #999;
+#footer h1,#footer h2 {
+	display:block;
+	padding:0 1em;
 }
-.slide h3 {font-size: 130%;}
-h1 abbr {font-variant: small-caps;}
 
-div#controls {position: absolute; left: 50%; bottom: 0;
-  width: 50%;
-  text-align: right; font: bold 0.9em Verdana, Helvetica, sans-serif;}
-html>body div#controls {position: fixed; padding: 0 0 1em 0;
-  top: auto;}
-div#controls form {position: absolute; bottom: 0; right: 0; width: 100%;
-  margin: 0; padding: 0;}
-#controls #navLinks a {padding: 0; margin: 0 0.5em; 
-  background: transparent; border: none; color: #AFC7D5; 
-  cursor: pointer;}
-#controls #navList {height: 1em;}
-#controls #navList #jumplist {position: absolute; bottom: 0; right: 0; background: #DDD; color: #227;}
-
-#currentSlide {text-align: center; font-size: 0.5em; color: #AFC7D5;}
-
-#slide0 {padding-top: 3.5em; font-size: 90%;}
-#slide0 h1 {position: static; margin: 1.5em 0 0; padding: 0;
-   font: bold 2em Helvetica, sans-serif; white-space: normal;
-   color: #550000; background: transparent;
-   text-align: center;}
-#slide0 h2 {font: bold italic 1em Helvetica, sans-serif; margin: 0.25em;
-  text-shadow: 2px 2px 3px #999;
-  text-align: center;
+div.long {
+	font-size:.75em;
 }
-#slide0 h3 {margin-top: 3em; font-size: 1.5em; text-align: center;}
-#slide0 h4 {margin-top: 0; font-size: 1em; text-align: center;}
 
-ul.urls {list-style: none; display: inline; margin: 0;}
-.urls li {display: inline; margin: 0;}
-.note {display: none;}
-.external {border-bottom: 1px dotted gray;}
-html>body .external {border-bottom: none;}
-.external:after {content: " \274F"; font-size: smaller; color: #77B;}
+.slide h1 {
+	position:absolute;
+	top:.6em;
+	left:87px;
+	z-index:1;
+	white-space:nowrap;
+	font:bold 150%/1em Helvetica, sans-serif;
+	text-transform:capitalize;
+	color:#500;
+	text-shadow:3px 3px 3px #999;
+	margin:0;
+	padding:.3em 0 0 50px;
+}
 
-.incremental, .incremental *, .incremental *:after {color: #DDE; visibility: visible;}
-img.incremental {visibility: hidden;}
-.slide .current { color: #B02;}
+.slide h3 {
+	font-size:130%;
+}
+
+h1 abbr {
+	font-variant:small-caps;
+}
+
+div#controls {
+	position:absolute;
+	left:50%;
+	bottom:0;
+	width:50%;
+	text-align:right;
+	font:bold .9em Verdana, Helvetica, sans-serif;
+}
+
+html>body div#controls {
+	position:fixed;
+	top:auto;
+	padding:0 0 1em;
+}
+
+div#controls form {
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+#controls #navLinks a {
+	background:transparent;
+	border:none;
+	color:#AFC7D5;
+	cursor:pointer;
+	margin:0 .5em;
+	padding:0;
+}
+
+#controls #navList {
+	height:1em;
+}
+
+#controls #navList #jumplist {
+	position:absolute;
+	bottom:0;
+	right:0;
+	background:#DDD;
+	color:#227;
+}
+
+#currentSlide {
+	text-align:center;
+	font-size:.5em;
+	color:#AFC7D5;
+}
+
+#slide0 {
+	padding-top:3.5em;
+	font-size:90%;
+	background:url(bg_slide.jpg) repeat-x 0 .9em;
+}
+
+#slide0 h1 {
+	position:static;
+	font:bold 2em Helvetica, sans-serif;
+	white-space:normal;
+	color:#500;
+	background:transparent;
+	text-align:center;
+	margin:1.5em 0 0;
+	padding:0;
+}
+
+#slide0 h2 {
+	font:bold italic 1em Helvetica, sans-serif;
+	text-shadow:2px 2px 3px #999;
+	text-align:center;
+	margin:.25em;
+}
+
+#slide0 h3 {
+	margin-top:3em;
+	font-size:1.5em;
+	text-align:center;
+}
+
+#slide0 h4 {
+	margin-top:0;
+	font-size:1em;
+	text-align:center;
+}
+
+ul.urls {
+	list-style:none;
+	display:inline;
+	margin:0;
+}
+
+.urls li {
+	display:inline;
+	margin:0;
+}
+
+.note {
+	display:none;
+}
+
+.external {
+	border-bottom:1px dotted gray;
+}
+
+html>body .external {
+	border-bottom:none;
+}
+
+.external:after {
+	content:" \274F";
+	font-size:smaller;
+	color:#77B;
+}
+
+.incremental,.incremental *,.incremental :after {
+	color:#ccccdd;
+	visibility:visible;
+}
+
+img.incremental {
+	visibility:hidden;
+}
+
+.slide .current {
+	color:#940101;
+}
+
 .slide {
-	padding: 5em 4% 4%;
-	background: url("bg_slide.jpg") repeat-x 0 3.5em;
+	background:url(bg_slide.jpg) repeat-x 0 3.5em;
+	padding:5em 4% 4%;
 }
-#slide0 { background: url("bg_slide.jpg") repeat-x 0 1em; }
+
+blockquote,q,blockquote b i,#footer h2 {
+	font-style:italic;
+}
 
 /* diagnostics
-
-li:after {content: " [" attr(class) "]"; color: #F88;}
+li:after {
+	content: " [" attr(class) "]"; color: #F88;
+}
  */
