@@ -249,12 +249,14 @@ div#controls form {
 }
 
 #slide0 h3 {
+	text-shadow:2px 2px 3px #999;
 	margin-top:3em;
 	font-size:1.5em;
 	text-align:center;
 }
 
 #slide0 h4 {
+	text-shadow:2px 2px 3px #999;
 	margin-top:0;
 	font-size:1em;
 	text-align:center;
