@@ -12,6 +12,8 @@ var number = undef;
 var s5mode = true;
 var defaultView = 'slideshow';
 var controlVis = 'visible';
+var delayHideControls = false;
+var hideControlsDelayed = false;
 
 var isIE = navigator.appName == 'Microsoft Internet Explorer' && navigator.userAgent.indexOf('Opera') < 1 ? 1 : 0;
 var isOp = navigator.userAgent.indexOf('Opera') > -1 ? 1 : 0;
@@ -99,6 +101,17 @@ function slideLabel() {
 	}
 }
 
+function gotoLocationHash() {
+	hash = location.hash.substring(6);
+	slideNumber = hash*1;
+	if (slideNumber != NaN)
+		go(slideNumber);
+}
+
+function setLocationHash(slideNumber) {
+	location.hash = "slide"+slideNumber;
+}
+
 function currentSlide() {
 	var cs;
 	if (document.getElementById) {
@@ -156,6 +169,12 @@ function go(step) {
 	jl.selectedIndex = snum;
 	currentSlide();
 	number = 0;
+
+	delayHideControls = false;
+	if(hideControlsDelayed == true)
+		showHide('h');
+
+	setLocationHash(snum);
 }
 
 function goTo(target) {
@@ -204,10 +223,17 @@ function toggle() {
 }
 
 function showHide(action) {
+	if (delayHideControls == true && action == 'h') {
+		hideControlsDelayed = true;
+		return;
+	}
 	var obj = GetElementsWithClassName('*','hideme')[0];
 	switch (action) {
 	case 's': obj.style.visibility = 'visible'; break;
-	case 'h': obj.style.visibility = 'hidden'; break;
+	case 'h': 
+		obj.style.visibility = 'hidden';
+		hideControlsDelayed = false;
+		break;
 	case 'k':
 		if (obj.style.visibility != 'visible') {
 			obj.style.visibility = 'visible';
@@ -386,7 +412,7 @@ function createControls() {
 	'<a accesskey="t" id="toggle" href="javascript:toggle();">&#216;<\/a>' +
 	'<a accesskey="z" id="prev" href="javascript:go(-1);">&laquo;<\/a>' +
 	'<a accesskey="x" id="next" href="javascript:go(1);">&raquo;<\/a>' +
-	'<div id="navList"' + hideList + '><select id="jumplist" onchange="go(\'j\');"><\/select><\/div>' +
+	'<div id="navList"' + hideList + '><select id="jumplist" onchange="go(\'j\'); document.getElementById(\'jumplist\').blur();" onfocus="delayHideControls = true;"><\/select><\/div>' +
 	'<\/div><\/form>';
 	if (controlVis == 'hidden') {
 		var hidden = document.getElementById('navLinks');
@@ -547,6 +573,7 @@ function startup() {
 		document.onkeypress = trap;
 		document.onclick = clicker;
 	}
+	gotoLocationHash();
 }
 
 window.onload = startup;
