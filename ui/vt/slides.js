@@ -211,7 +211,6 @@ function toggle() {
 
 function showHide(action) {
 	if (delayHideControls == true && action == 'h') {
-		console.log("not hiding");
 		hideControlsDelayed = true;
 		return;
 	}
