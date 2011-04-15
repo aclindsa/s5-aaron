@@ -101,6 +101,17 @@ function slideLabel() {
 	}
 }
 
+function gotoLocationHash() {
+	hash = location.hash.substring(6);
+	slideNumber = hash*1;
+	if (slideNumber != NaN)
+		go(slideNumber);
+}
+
+function setLocationHash(slideNumber) {
+	location.hash = "slide"+slideNumber;
+}
+
 function currentSlide() {
 	var cs;
 	if (document.getElementById) {
@@ -162,6 +173,8 @@ function go(step) {
 	delayHideControls = false;
 	if(hideControlsDelayed == true)
 		showHide('h');
+
+	setLocationHash(snum);
 }
 
 function goTo(target) {
@@ -560,6 +573,7 @@ function startup() {
 		document.onkeypress = trap;
 		document.onclick = clicker;
 	}
+	gotoLocationHash();
 }
 
 window.onload = startup;
