@@ -101,13 +101,6 @@ function slideLabel() {
 	}
 }
 
-function gotoLocationHash() {
-	hash = location.hash.substring(6);
-	slideNumber = hash*1;
-	if (slideNumber != NaN)
-		go(slideNumber);
-}
-
 function setLocationHash(slideNumber) {
 	location.hash = "slide"+slideNumber;
 }
@@ -573,7 +566,6 @@ function startup() {
 		document.onkeypress = trap;
 		document.onclick = clicker;
 	}
-	gotoLocationHash();
 }
 
 window.onload = startup;
